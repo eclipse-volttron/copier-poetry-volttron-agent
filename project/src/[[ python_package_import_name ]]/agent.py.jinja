@@ -8,7 +8,7 @@ import sys
 from pprint import pformat
 import datetime
 
-from volttron import utils
+from volttron.utils import load_config, setup_logging
 from volttron.utils.commands import vip_main
 from volttron.client.messaging.health import STATUS_GOOD
 from volttron.client.vip.agent import Agent, Core, PubSub, RPC
@@ -18,7 +18,7 @@ from volttron.client.vip.agent.subsystems.query import Query
 __version__ = "0.1.0"
 
 # Setup logging so that it runs within the platform
-utils.setup_logging()
+setup_logging()
 
 # The logger for this agent is _log and can be used throughout this file.
 _log = logging.getLogger(__name__)
@@ -35,7 +35,7 @@ def [[ python_package_import_name ]](config_path, **kwargs):
     :rtype: [[ python_agent_class_name ]]
     """
     try:
-        config = utils.load_config(config_path)
+        config = load_config(config_path)
     except Exception:
         config = {}
 

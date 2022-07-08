@@ -20,8 +20,8 @@ repos:
 - repo: https://github.com/pycqa/isort
   rev: 5.10.1
   hooks:
-    - id: isort
-      name: isort (python)
+  - id: isort
+    name: isort (python)
 
 # For more information about mypy, see https://github.com/pre-commit/mirrors-mypy
 - repo: https://github.com/pre-commit/mirrors-mypy
@@ -34,7 +34,7 @@ repos:
   hooks:
   - id: pytest
     name: Check pytest unit tests pass
-    entry: poetry run test
+    entry: poetry run pytest
     pass_filenames: false
     language: system
     types: [python]
@@ -65,7 +65,7 @@ repos:
   hooks:
   - id: yapf
     name: yapf
-    description: "A formatter for Python files."
+    description: A formatter for Python files.
     entry: yapf
     language: python
-    types: [ python ]
+    types: [python]
