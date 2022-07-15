@@ -23,15 +23,6 @@ repos:
   - id: mypy
     exclude: ^(docs/|example-plugin/|tests/fixtures)
 
-- repo: local
-  hooks:
-  - id: pytest
-    name: Check pytest unit tests pass
-    entry: poetry run pytest
-    pass_filenames: false
-    language: system
-    types: [python]
-
 - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
   rev: v2.2.0
   hooks:
@@ -61,4 +52,13 @@ repos:
     description: A formatter for Python files.
     entry: yapf
     language: python
+    types: [python]
+
+- repo: local
+  hooks:
+  - id: pytest
+    name: Check pytest unit tests pass
+    entry: poetry run pytest
+    pass_filenames: false
+    language: system
     types: [python]

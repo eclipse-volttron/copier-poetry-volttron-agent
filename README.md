@@ -60,9 +60,7 @@ template version. See [documentation for this flag](https://copier.readthedocs.i
 - Documentation built with [Sphinx](https://www.sphinx-doc.org/en/master/)
 - Pre-configured tools for code formatting, quality analysis and testing:
     - [yapf](https://github.com/google/yapf)
-    - [isort](https://github.com/timothycrosley/isort),
-    - [mypy](https://github.com/python/mypy),
-    - [safety](https://github.com/pyupio/safety)
+    - [mypy](https://github.com/python/mypy)
 - Tests run with [pytest](https://github.com/pytest-dev/pytest) and plugins,
   with [coverage](https://github.com/nedbat/coveragepy) support
 - Support for GitHub workflow and Gitlab CI
