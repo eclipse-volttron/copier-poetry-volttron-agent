@@ -1,10 +1,31 @@
 """Tests suite for `[[ python_package_import_name ]]`."""
 
+import json
+import pytest
+
 from pathlib import Path
+from volttron.platform_driver.agent import initialize_agent
+from volttrontesting import TestServer
 
 TESTS_DIR = Path(__file__).parent
 TMP_DIR = TESTS_DIR / "tmp"
 FIXTURES_DIR = TESTS_DIR / "fixtures"
-
 """Configuration for the pytest test suite."""
 
+@pytest.fixture()
+def [[ python_package_import_name ]]():
+    config_path = f"{TESTS_DIR}/cfg.json"
+    # Customize the agent configuration for testing purposes
+    config_json = {}
+
+    with open(config_path, 'w') as fp:
+        json.dump(config_json, fp)
+
+    yield initialize_agent(config_path)
+
+    Path(config_path).unlink(missing_ok=True)
+
+
+@pytest.fixture()
+def volttron_test_server():
+    ts = TestServer()
