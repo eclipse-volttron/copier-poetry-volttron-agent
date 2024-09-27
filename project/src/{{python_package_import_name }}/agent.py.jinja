@@ -97,7 +97,7 @@ class {{ python_agent_class_name }}(Agent):
         self._create_subscriptions(self.setting2)
 
     def _set_runtime_limit(self):
-        if not self.runtime_limit and self.runtime_limit > 0:
+        if self.runtime_limit and self.runtime_limit > 0:
             stop_time = datetime.datetime.now() + datetime.timedelta(seconds=self.runtime_limit)
             _log.info('{{ python_agent_class_name }} agent will stop at {}'.format(stop_time))
             self.core.schedule(stop_time, self.core.stop)
